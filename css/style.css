@@ -575,3 +575,7 @@ input[type="range"] {
     height: 5px;
     cursor: pointer;
 }
+
+button, img, svg {
+  outline: none;
+}
