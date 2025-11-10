@@ -8,7 +8,7 @@ let currentSong = new Audio();
 let songs = [];
 let currentIndex = 0;
 
-// 🔹 Format mm:ss
+//  Format mm:ss
 function formatTime(seconds) {
   if (isNaN(seconds)) return "00:00";
   let minutes = Math.floor(seconds / 60);
@@ -16,18 +16,18 @@ function formatTime(seconds) {
   return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
 }
 
-// 🔹 Fetch songs from songs.json
+//  Fetch songs from songs.json
 async function getSongs(folder = "songs/") {
   try {
     const res = await fetch(`${folder}songs.json`);
     const data = await res.json();
     songs = data.songs.map(name => `${folder}${name}`);
   } catch (err) {
-    console.error(`❌ songs.json missing in ${folder}`, err);
+    console.error(` songs.json missing in ${folder}`, err);
     songs = [];
   }
 
-  console.log("✅ Songs Found:", songs);
+  console.log(" Songs Found:", songs);
 
   let songUL = document.querySelector(".songlist ul");
   if (songUL) {
@@ -78,7 +78,7 @@ function playMusic(track, pause = false) {
   highlightCurrentSong();
 }
 
-// 🔹 Highlight playing song
+//  Highlight playing song
 function highlightCurrentSong() {
   let lis = document.querySelectorAll(".songlist li");
   lis.forEach((li, i) => {
@@ -92,7 +92,7 @@ function highlightCurrentSong() {
   });
 }
 
-// 🔹 Display albums from index.json
+//  Display albums from index.json
 async function displayAlbums() {
   try {
     const res = await fetch("songs/index.json");
@@ -120,7 +120,7 @@ async function displayAlbums() {
             <p>${info.description}</p>
           </div>`;
       } catch {
-        console.warn(`⚠️ info.json missing in songs/${folder}`);
+        console.warn(` info.json missing in songs/${folder}`);
       }
     }
 
@@ -140,11 +140,11 @@ async function displayAlbums() {
       playMusic(songs[0], true);
     }
   } catch (err) {
-    console.error("❌ Error loading index.json:", err);
+    console.error(" Error loading index.json:", err);
   }
 }
 
-// 🔹 Main Function
+// Main Function
 async function main() {
   await displayAlbums();
 
@@ -241,3 +241,4 @@ async function main() {
 }
 
 main();
+
