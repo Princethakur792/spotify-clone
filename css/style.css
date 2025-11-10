@@ -38,9 +38,15 @@ body {
     padding-top: 14px;
 }
 
-.info div {
-    word-break: break-all;
-}
+ .info div {
+        word-break: break-all;
+        overflow: hidden;
+        display: -webkit-box;
+        line-clamp: 4;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+    }
 
 .heading {
     width: 23vw;
@@ -590,3 +596,4 @@ img,
 svg {
     outline: none;
 }
+
