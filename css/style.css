@@ -329,7 +329,7 @@ body {
     }
 
     .songlist ul {
-        height: 550px;
+        height: 450px;
     }
 
     .library {
@@ -337,7 +337,7 @@ body {
     }
 
     .footer {
-        bottom: 50px;
+        bottom: -70px;
     }
 
     .right {
@@ -352,7 +352,6 @@ body {
         transform: translateX(-50%);
         width: 95vw;
         height: 70px;
-        /* ya apne hisab se */
         z-index: 1000;
     }
 
@@ -579,3 +578,4 @@ input[type="range"] {
 button, img, svg {
   outline: none;
 }
+
