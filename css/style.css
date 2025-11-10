@@ -387,6 +387,16 @@ body {
     .abovebar {
         height: 6vh;
     }
+
+    .info div {
+        word-break: break-all;
+        overflow: hidden;
+        display: -webkit-box;
+        line-clamp: 3;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+    }
 }
 
 @media(max-width:800px) {
@@ -481,7 +491,7 @@ body {
         -webkit-overflow-scrolling: touch;
     }
 
-    .spotifyplaylist{
+    .spotifyplaylist {
         background-color: black;
     }
 
@@ -575,7 +585,8 @@ input[type="range"] {
     cursor: pointer;
 }
 
-button, img, svg {
-  outline: none;
+button,
+img,
+svg {
+    outline: none;
 }
-
